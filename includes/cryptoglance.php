@@ -126,7 +126,12 @@ class CryptoGlance {
                 'name' => ($label ? $label : 'TradeMyBit'),
                 'apikey' => $api,
             );
-
+          } else if ($type == 'multipoolus' && !empty($api)) {
+            $pool = array(
+                'type' => $type,
+                'name' => ($label ? $label : 'MultiPool.us'),
+                'apikey' => $api,
+            );
         } else {
             header("HTTP/1.0 406 Not Acceptable"); // not accepted
             return null;

@@ -20,7 +20,11 @@ class Pools_TradeMyBit extends Pools_Abstract {
         $pow = floor( ( $hashRate ? log( $hashRate ) : 0 ) / log( 1024 ) );
         $pow = min( $pow, count( $units ) - 1 );
 
+<<<<<<< HEAD
         $hashRate = $hashRate / pow( 1024, $pow );
+=======
+        $hashRate = $hashRate / pow( 1000, $pow );
+>>>>>>> development
         return round( $hashRate, $precision ) . ' ' . $units[$pow];
     }
 
